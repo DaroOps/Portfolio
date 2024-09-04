@@ -1,0 +1,11 @@
+.app-container.is-dark-theme {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --acent-color: var(--dark-acent-color);
+  
+    /* Backgrounds */
+    --background-color: var(--dark-background-color);
+  
+    /* Text */
+    --text-color: var(--dark-text-color);
+}

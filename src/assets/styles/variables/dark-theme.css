@@ -1,0 +1,13 @@
+/* Dark Mode */
+:root {
+  /* States */
+  --dark-primary-color: #0F3460;
+  --dark-secondary-color: #E94560;
+  --dark-acent-color: #00FFA3;
+
+  /* Backgrounds */
+  --dark-background-color: #1A1A2E;
+
+  /* Text */
+  --dark-text-color: #FFFFFF;
+}

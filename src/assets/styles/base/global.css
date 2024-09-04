@@ -1,0 +1,22 @@
+/* Apply base styles to the body */
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+}
+
+input {
+    background-color: var(--background-color2);
+}
+
+input:focus {
+    outline: var(--primary-color) solid 2px;
+}
+
+button {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    color: var(--background-color);
+}
+

@@ -1,0 +1,15 @@
+/*
+  Colors
+*/
+:root {
+  /* General */
+  --primary-color: #1E56A0;
+  --secondary-color: #E94560;
+  --acent-color: rgb(6, 191, 123);
+  
+  /* Backgrounds */
+  --background-color: #F0F0F0;
+
+  /* Text */
+  --text-color: #2E2E2E;
+}
