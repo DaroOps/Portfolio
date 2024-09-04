@@ -1,9 +1,9 @@
 <template>
   <div class="contact-form-container">
-    <h2 class="form-title">Contáctame</h2>
+    <h2 class="form-title">{{ t('contact.title') }}</h2>
     <form @submit.prevent="submitForm" class="contact-form">
       <div class="form-group">
-        <label for="name">Nombre:</label>
+        <label for="name">{{ t('contact.form.name') }}:</label>
         <input type="text" id="name" v-model="form.name" required>
       </div>
       <div class="form-group">
@@ -11,11 +11,11 @@
         <input type="email" id="email" v-model="form.email" required>
       </div>
       <div class="form-group">
-        <label for="message">Mensaje:</label>
+        <label for="message">{{ t('contact.form.message') }}:</label>
         <textarea id="message" v-model="form.message" required></textarea>
       </div>
       <button type="submit" class="submit-button">
-        <span>Enviar</span>
+        <span>{{ t('contact.form.submit') }}</span>
         <i class="fas fa-paper-plane"></i>
       </button>
     </form>
@@ -24,6 +24,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const form = ref({
   name: '',

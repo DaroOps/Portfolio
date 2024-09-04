@@ -10,61 +10,65 @@
 <script setup>
 import { computed } from 'vue';
 import ProjectCard from '@components/ProjectCard/ProjectCard.vue';
+import { useI18n } from 'vue-i18n';
 
-const projects = [
-  {
-    id: 1,
-    title: 'CineApp',
-    description: 'Aplicación de reserva de asientos de cine en tiempo real con pasarela de pago Stripe y autenticación JWT. Desarrollada con las mejores prácticas.',
-    technologies: ['Express', 'JWT', 'MongoDB', 'Vue 3', 'WebSocket', 'Cloudinary', 'Stripe'],
-    type: 'Fullstack'
-  },
-  {
-    id: 2,
-    title: 'WoF',
-    description: 'Plataforma que conecta cuidadores con dueños de mascotas. Proyecto en equipo desarrollado con metodología Scrum y plazos ajustados.',
-    technologies: ['WebSocket', 'Auth0', 'React', 'PostgreSQL', 'Sequelize', 'SASS', 'Cloudinary'],
-    type: 'Fullstack'
-  },
-  {
-    id: 3,
-    title: 'Videogames Explorer',
-    description: 'Aplicación para explorar videojuegos, con funcionalidades de filtrado, favoritos y autenticación de usuarios.',
-    technologies: ['Express', 'React', 'Redux', 'PostgreSQL', 'Sequelize'],
-    type: 'Fullstack'
-  },
-  {
-    id: 4,
-    title: 'Rick and Morty Explorer',
-    description: 'Explora el universo de Rick y Morty con login, favoritos y descripciones detalladas de personajes.',
-    technologies: ['React', 'Redux', 'Express', 'PostgreSQL', 'Sequelize'],
-    type: 'Fullstack'
-  },
-  {
-    id: 5,
-    title: 'Spotify Clone',
-    description: 'Clon de Spotify desarrollado enteramente con JavaScript y Web Components para entender el funcionamiento de frameworks modernos.',
-    technologies: ['JavaScript', 'Web Components', 'HTML', 'CSS'],
-    type: 'Frontend'
-  },
-  {
-    id: 6,
-    title: 'Save the Sea',
-    description: 'Videojuego educativo para concientizar sobre el desperdicio de basura en las playas. Proyecto freelance con contacto directo con el cliente.',
-    technologies: ['Unity', 'C#', 'Blender'],
-    type: 'Game Development'
-  },
-  {
-    id: 7,
-    title: 'FoodLover',
-    description: 'Landing page de un restaurante ficticio que demuestra las mejores prácticas de escritura semántica en HTML.',
-    technologies: ['HTML', 'CSS'],
-    type: 'Frontend'
-  }
-];
+const { t } = useI18n();
+
+
+const projects = computed(() => [
+      {
+        id: 1,
+        title: t('projects.projects.cineapp.title'),
+        description: t('projects.projects.cineapp.description'),
+        technologies: ['Express', 'JWT', 'MongoDB', 'Vue 3', 'WebSocket', 'Cloudinary', 'Stripe'],
+        type: t('projects.projects.cineapp.type')
+      },
+      {
+        id: 2,
+        title: 'WoF',
+        description: t('projects.projects.wof.description'),
+        technologies: ['WebSocket', 'Auth0', 'React', 'PostgreSQL', 'Sequelize', 'SASS', 'Cloudinary'],
+        type: t('projects.projects.wof.type')
+      },
+      {
+        id: 3,
+        title: t('projects.projects.videogamesexplorer.title'),
+        description: t('projects.projects.videogamesexplorer.description'),
+        technologies: ['Express', 'React', 'Redux', 'PostgreSQL', 'Sequelize'],
+        type: t('projects.projects.videogamesexplorer.type')
+      },
+      {
+        id: 4,
+        title: t('projects.projects.rickandmortyexplorer.title'),
+        description: t('projects.projects.rickandmortyexplorer.description'),
+        technologies: ['React', 'Redux', 'Express', 'PostgreSQL', 'Sequelize'],
+        type: t('projects.projects.rickandmortyexplorer.type')
+      },
+      {
+        id: 5,
+        title: t('projects.projects.spotifyclone.title'),
+        description: t('projects.projects.spotifyclone.description'),
+        technologies: ['JavaScript', 'Web Components', 'HTML', 'CSS'],
+        type: t('projects.projects.spotifyclone.type')
+      },
+      {
+        id: 6,
+        title: t('projects.projects.savethesea.title'),
+        description: t('projects.projects.savethesea.description'),
+        technologies: ['Unity', 'C#', 'Blender'],
+        type: t('projects.projects.savethesea.type')
+      },
+      {
+        id: 7,
+        title: t('projects.projects.foodlover.title'),
+        description: t('projects.projects.foodlover.description'),
+        technologies: ['HTML', 'CSS'],
+        type: t('projects.projects.foodlover.type')
+      }
+    ]);
 
 const sortedProjects = computed(() => {
-  return projects.sort((a, b) => {
+  return projects.value.sort((a, b) => {
     const typeOrder = { 'Fullstack': 3, 'Game Development': 2, 'Frontend': 1 };
     return typeOrder[b.type] - typeOrder[a.type];
   });

@@ -1,35 +1,40 @@
 <script setup>
 import SkillItem from '@components/SkillItem/SkillItem.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 </script>
 
 <template>
   <div class="about">
-    <h1>Sobre Mí</h1>
+    <h1>{{ t('about.title') }}</h1>
     <p class="description">
-      Soy un desarrollador full stack con un impetu por el mundo tech y la impresión 3D. Mi experiencia abarca desde el desarrollo web hasta la creación de videojuegos, lo que me ha permitido adquirir un conjunto diverso de habilidades técnicas y blandas.
+      {{ t('about.content') }}
+      <!-- Soy un desarrollador full stack con un impetu por el mundo tech y la impresión 3D. Mi experiencia abarca desde el desarrollo web hasta la creación de videojuegos, lo que me ha permitido adquirir un conjunto diverso de habilidades técnicas y blandas. -->
     </p>
     <div class="highlights">
       <div class="highlight-item">
-        <h3>Desarrollo Web</h3>
-        <p>Experiencia en Vue.js, React.js, Express.js y bases de datos como MongoDB, PostgreSQL y MySQL.</p>
+        <h3>{{ t('about.highlights.frontend') }}</h3>
+        <p>{{ t('about.highlights.frontendExperience') }}</p>
       </div>
       <div class="highlight-item">
-        <h3>Desarrollo de Videojuegos</h3>
-        <p>Competente en C#, Unity y Godot para la creación de experiencias interactivas únicas.</p>
+        <h3> {{ t('about.highlights.gamedev') }}</h3>
+        <p>{{ t('about.highlights.gamedevExperience') }}</p>
       </div>
       <div class="highlight-item">
-        <h3>Impresión 3D</h3>
-        <p>Entusiasta de la impresión 3D, aplicando esta tecnología en proyectos innovadores.</p>
+        <h3>{{ t('about.highlights.dprinting') }}</h3>
+        <p>{{ t('about.highlights.dprintingExperience') }}</p>
       </div>
     </div>
     <div class="soft-skills">
-      <h3>Habilidades Blandas</h3>
+      <h3>{{ t('about.softSkills.title') }}</h3>
       <ul>
-        <li>Gestión eficiente de plazos cortos</li>
-        <li>Trabajo en equipo</li>
-        <li>Empatía</li>
-        <li>Comunicación efectiva</li>
+        <li>{{ t('about.softSkills.agile') }}</li>
+        <li>{{ t('about.softSkills.teamwork') }}</li>
+        <li>{{ t('about.softSkills.collaboration') }}</li>
+        <li>{{ t('about.softSkills.communication') }}</li>
+        <li>{{ t('about.softSkills.leadership') }}</li>
       </ul>
     </div>
   </div>
@@ -44,11 +49,11 @@ import SkillItem from '@components/SkillItem/SkillItem.vue';
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 100vh;
   background-color: var(--background-color);
   color: var(--text-color);
   padding: 2rem;
   text-align: center;
+  
 
   h1 {
     font-size: 2.5rem;

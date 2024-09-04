@@ -1,4 +1,5 @@
 <template>
+  
     <div class="service-item">
       <div class="service-icon" :style="{ backgroundColor: getRandomColor() }">
         <i :class="service.icon"></i>
@@ -6,15 +7,16 @@
       <div class="service-content">
         <h3>{{ service.name }}</h3>
         <p>{{ service.description }}</p>
-        <ul v-if="service.features">
-          <li v-for="feature in service.features" :key="feature">{{ feature }}</li>
+        <ul v-if="service.features && service.features.length > 2">
+          <li v-for="feature in service?.features" :key="feature">{{ feature }}</li>
         </ul>
       </div>
     </div>
   </template>
   
   <script setup>
-  import { defineProps } from 'vue';
+  import { defineProps, watch } from 'vue';
+  
   
   const props = defineProps({
     service: {

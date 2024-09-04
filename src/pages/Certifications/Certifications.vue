@@ -1,7 +1,7 @@
 <template>
   <div class="certifications">
     <div class="certifications-container">
-      <h1 class="certifications-title">Mis Certificaciones</h1>
+      <h1 class="certifications-title">{{ t('certifications.title') }}</h1>
       <div class="certifications-grid">
         <CertificationItem v-for="cert in certifications" :key="cert.id" :certification="cert" />
       </div>
@@ -10,50 +10,55 @@
 </template>
 
 <script setup>
-import CertificationItem from '@components/CertificationItem/CertificationItem.vue';
 
-const certifications = [
+import { computed } from 'vue';
+import CertificationItem from '@components/CertificationItem/CertificationItem.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const certifications = computed(() => [
   { 
     id: 1, 
-    name: 'Desarrollador Full Stack', 
-    issuer: 'HENRY Bootcamp',
-    date: 'Marzo 2023',
-    description: 'Programa intensivo de desarrollo web full stack, cubriendo tecnologías front-end y back-end.',
+    name: t('certifications.certifications.fullstackbootcamp.title'),
+    issuer: t('certifications.certifications.fullstackbootcamp.issuer'),
+    date: t('certifications.certifications.fullstackbootcamp.date'),
+    description: t('certifications.certifications.fullstackbootcamp.description'),
     url: 'https://certificates.soyhenry.com/cert?id=1234567890'
   },
   { 
     id: 2, 
-    name: 'Unity Certified Developer', 
-    issuer: 'Unity Technologies',
-    date: 'Julio 2023',
-    description: 'Certificación que valida habilidades en desarrollo de juegos y aplicaciones interactivas con Unity.',
-    url: 'https://unity.com/products/unity-certifications/1234567890'
+    name: t('certifications.certifications.unitycertified.title'),
+    issuer: t('certifications.certifications.unitycertified.issuer'),
+    date: t('certifications.certifications.unitycertified.date'),
+    description: t('certifications.certifications.unitycertified.description'),
+    url: t('certifications.certifications.unitycertified.link')
   },
   { 
     id: 3, 
-    name: 'English Certification B2', 
-    issuer: 'ES-SET',
-    date: 'Septiembre 2023',
-    description: 'Certificación de nivel intermedio alto en inglés, equivalente al nivel B2 del Marco Común Europeo.',
-    url: 'https://www.es-set.org/verify/1234567890'
+    name: t('certifications.certifications.englishcertificationb2.title'),
+    issuer: t('certifications.certifications.englishcertificationb2.issuer'),
+    date: t('certifications.certifications.englishcertificationb2.date'),
+    description: t('certifications.certifications.englishcertificationb2.description'),
+    url: t('certifications.certifications.englishcertificationb2.link')
   },
   { 
     id: 4, 
-    name: 'Git: De Novato a Experto', 
-    issuer: 'Mastermind',
-    date: 'Noviembre 2023',
-    description: 'Curso completo sobre control de versiones con Git, desde conceptos básicos hasta flujos de trabajo avanzados.',
-    url: 'https://mastermind.dev/certificates/git/1234567890'
+    name: t('certifications.certifications.git.title'),
+    issuer: t('certifications.certifications.git.issuer'),
+    date: t('certifications.certifications.git.date'),
+    description: t('certifications.certifications.git.description'),
+    url: t('certifications.certifications.git.link')
   },
   { 
     id: 5, 
-    name: 'Personalización de Entornos Linux', 
-    issuer: 'Mastermind',
-    date: 'Enero 2024',
-    description: 'Curso avanzado sobre la personalización y optimización de entornos Linux para desarrollo.',
-    url: 'https://mastermind.dev/certificates/linux/1234567890'
+    name: t('certifications.certifications.linux.title'),
+    issuer: t('certifications.certifications.linux.issuer'),
+    date: t('certifications.certifications.linux.date'),
+    description: t('certifications.certifications.linux.description'),
+    url: t('certifications.certifications.linux.link')
   }
-];
+]);
 </script>
 
 <style scoped>

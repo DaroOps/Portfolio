@@ -8,75 +8,50 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import ServiceItem from '@components/ServiceItem/ServiceItem.vue';
 
-const services = [
+const { t, tm } = useI18n();
+
+
+const services = computed(() => [
   { 
     id: 1, 
-    name: 'Desarrollo Full Stack', 
-    description: 'Desarrollo de aplicaciones web completas, desde el front-end hasta el back-end.',
-    icon: 'fas fa-laptop-code',
-    features: [
-      'Aplicaciones web con Vue.js y React',
-      'APIs RESTful con Express.js',
-      'Bases de datos SQL y NoSQL',
-      'Integración de pasarelas de pago',
-      'Autenticación y autorización'
-    ]
+    name: t('services.services.frontend.title'),
+    description: t('services.services.frontend.description'),
+    icon: t('services.services.frontend.icon'),
+    features: tm('services.services.frontend.features')
   },
   { 
     id: 2, 
-    name: 'Desarrollo de Videojuegos', 
-    description: 'Creación de juegos interactivos y experiencias inmersivas.',
-    icon: 'fas fa-gamepad',
-    features: [
-      'Desarrollo con Unity y C#',
-      'Diseño de mecánicas de juego',
-      'Optimización de rendimiento',
-      'Integración de gráficos 3D',
-      'Publicación en tiendas de aplicaciones'
-    ]
+    name: t('services.services.fullstack.title'),
+    description: t('services.services.fullstack.description'),
+    icon: t('services.services.fullstack.icon'),
+    features: tm('services.services.fullstack.features')
   },
   { 
     id: 3, 
-    name: 'Desarrollo Frontend', 
-    description: 'Creación de interfaces de usuario atractivas y responsivas.',
-    icon: 'fas fa-paint-brush',
-    features: [
-      'Diseño UI/UX',
-      'Desarrollo con HTML5, CSS3 y JavaScript',
-      'Frameworks: Vue.js, React',
-      'Optimización de rendimiento',
-      'Accesibilidad web'
-    ]
+    name: t('services.services.gamedev.title'),
+    description: t('services.services.gamedev.description'),
+    icon: t('services.services.gamedev.icon'),
+    features: tm('services.services.gamedev.features')
   },
   { 
     id: 4, 
-    name: 'Consultoría Técnica', 
-    description: 'Asesoramiento en tecnologías y mejores prácticas de desarrollo.',
-    icon: 'fas fa-comments',
-    features: [
-      'Arquitectura de software',
-      'Selección de stack tecnológico',
-      'Optimización de procesos de desarrollo',
-      'Implementación de metodologías ágiles',
-      'Revisión de código y mentoring'
-    ]
+    name: t('services.services.cosultoring.title'),
+    description: t('services.services.cosultoring.description'),
+    icon: t('services.services.cosultoring.icon'),
+    features: tm('services.services.cosultoring.features')
   },
   { 
     id: 5, 
-    name: 'Impresión 3D y Prototipado', 
-    description: 'Servicios de diseño e impresión 3D para prototipos y proyectos personalizados.',
-    icon: 'fas fa-cube',
-    features: [
-      'Diseño 3D para impresión',
-      'Prototipado rápido',
-      'Impresión de modelos personalizados',
-      'Asesoramiento en materiales y técnicas',
-      'Postprocesado de modelos impresos'
-    ]
+    name: t('services.services.printing.title'),
+    description: t('services.services.printing.description'),
+    icon: t('services.services.printing.icon'),
+    features: tm('services.services.printing.features')
   }
-];
+]);
 </script>
 
 <style scoped>

@@ -1,6 +1,8 @@
 <template>
+      <!--TODO: Add icons -->
+    <!--TODOP: apply atomic design!!! -->
     <div class="skills-container">
-      <h2 class="skills-title">Mis Habilidades</h2>
+      <h2 class="skills-title">{{t('skills.title')}}</h2>
       <div class="skills-grid">
         <div v-for="skill in skills" :key="skill.name" class="skill-item">
           <h4>{{ skill.name }}</h4>
@@ -15,6 +17,9 @@
   
   <script setup>
   import { ref } from 'vue';
+  import { useI18n } from 'vue-i18n';
+
+  const { t } = useI18n();
   
   const skills = ref([
     { name: 'Linux', level: 95 },
@@ -37,6 +42,11 @@
   </script>
   
   <style scoped>
+ 
+  .skills-title{
+    margin: 0;
+  }
+
   .skills-container {
     background-color: var(--background-color);
     margin: 0 auto;
