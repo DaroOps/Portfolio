@@ -1,6 +1,6 @@
 <template>
   <div class="services-container">
-    <h1 class="services-title">Mis Servicios</h1>
+    <h1 class="services-title"> {{ t('services.title') }} </h1>
     <div class="services-grid">
       <ServiceItem v-for="service in services" :key="service.id" :service="service" />
     </div>

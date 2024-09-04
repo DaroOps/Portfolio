@@ -1,6 +1,6 @@
 <template>
   <div class="projects-container">
-    <h1 class="projects-title">Mis Proyectos</h1>
+    <h1 class="projects-title">{{ t('projects.title')}}</h1>
     <div class="projects-grid">
       <ProjectCard v-for="project in sortedProjects" :key="project.id" :project="project" />
     </div>
