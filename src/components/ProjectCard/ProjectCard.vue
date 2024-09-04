@@ -1,48 +1,79 @@
-<script setup>
-import { defineProps } from 'vue';
-
-const props = defineProps({
-  project: {
-    type: Object,
-    required: true
-  }
-})
-
-</script>
-
 <template>
-    <div class="project-card">
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.description }}</p>
-        <div class="project-links">
-            <a v-if="project.liveUrl" :href="project.liveUrl" target="_blank">View Live</a>
-            <a v-if="project.repoUrl" :href="project.repoUrl" target="_blank">View Repository</a>
-        </div>
-        <div class="project-technologies">
-            <span v-for="tech in project.technologies" :key="tech" class="tech-tag">{{ tech }}</span>
-        </div>
+    <div class="project-card" :class="project.type.toLowerCase()">
+      <h2 class="project-title">{{ project.title }}</h2>
+      <p class="project-description">{{ project.description }}</p>
+      <div class="project-tech">
+        <span v-for="tech in project.technologies" :key="tech" class="tech-tag">{{ tech }}</span>
+      </div>
+      <div class="project-type">{{ project.type }}</div>
     </div>
-</template>
-
-<style scoped>
-.project-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
+  </template>
+  
+  <script setup>
+  defineProps({
+    project: {
+      type: Object,
+      required: true
+    }
+  });
+  </script>
+  
+  <style lang="scss" scoped>
+  .project-card {
+    background-color: rgb(from var(--primary-color) r g b / 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    &.fullstack {
+      border-left: 5px solid #42b983;
+    }
+  
+    &.frontend {
+      border-left: 5px solid #61dafb;
+    }
+  
+    &.game-development {
+      border-left: 5px solid #ff6b6b;
+    }
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color, #ffffff);
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
     margin-bottom: 1rem;
-}
-
-.project-links a {
-    margin-right: 1rem;
-    color: #42b983;
-    text-decoration: none;
-}
-
-.tech-tag {
-    background-color: #f0f0f0;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    margin-right: 0.5rem;
+    color: var(--text-color, #dddddd);
+  }
+  
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color, #ffffff);
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
     font-size: 0.8rem;
-}
-</style>
+  }
+  
+  .project-type {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--type-color, #bbbbbb);
+  }
+  </style>

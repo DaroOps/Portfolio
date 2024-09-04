@@ -4,11 +4,19 @@
 
 <template>
  <div class="contact">
-    <h1>Contact Me</h1>
-    <ContactForm />
+    <div>
+      <ContactForm />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+  .contact {
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+  }
 </style>

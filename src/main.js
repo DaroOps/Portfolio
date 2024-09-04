@@ -7,6 +7,9 @@ import { createI18n } from 'vue-i18n'
 
 import messages from './config/118n.config.js'
 
+
+
+
 const app = createApp(App);
 
 const i18n = createI18n({
@@ -18,7 +21,6 @@ const i18n = createI18n({
 );
 
 const pinia = createPinia();
-
 app.use(router);
 app.use(pinia);
 app.use(i18n);
