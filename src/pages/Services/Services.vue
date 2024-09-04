@@ -1,8 +1,10 @@
 <template>
-  <div class="services-container">
-    <h1 class="services-title"> {{ t('services.title') }} </h1>
-    <div class="services-grid">
-      <ServiceItem v-for="service in services" :key="service.id" :service="service" />
+  <div class="services">
+    <div class="services-container">
+      <h1 class="services-title"> {{ t('services.title') }} </h1>
+      <div class="services-grid">
+        <ServiceItem v-for="service in services" :key="service.id" :service="service" />
+      </div>
     </div>
   </div>
 </template>
@@ -55,11 +57,15 @@ const services = computed(() => [
 </script>
 
 <style scoped>
+.services{
+  width: 100%;
+  background-color: var(--background-color);
+}
+
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: var(--background-color);
 }
 
 .services-title {

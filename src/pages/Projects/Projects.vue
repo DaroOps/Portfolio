@@ -1,8 +1,10 @@
 <template>
-  <div class="projects-container">
-    <h1 class="projects-title">{{ t('projects.title')}}</h1>
-    <div class="projects-grid">
-      <ProjectCard v-for="project in sortedProjects" :key="project.id" :project="project" />
+  <div class="projects">
+    <div class="projects-container">
+      <h1 class="projects-title">{{ t('projects.title')}}</h1>
+      <div class="projects-grid">
+        <ProjectCard v-for="project in sortedProjects" :key="project.id" :project="project" />
+      </div>
     </div>
   </div>
 </template>
@@ -76,11 +78,17 @@ const sortedProjects = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+
+.projects{
+  width: 100%;
+  background-color: var(--background-color);
+
+}
+
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: var(--background-color);
 }
 
 .projects-title {
