@@ -330,8 +330,8 @@ const messages = {
       },
       certifications: {
         title: 'Mis Certificaciones',
+        see:"Ver Certificado",
         certifications: {
-          see:"Ver Certificado",
           fullstackbootcamp: {
             title: 'Desarrollador Full Stack',
             issuer: 'HENRY Bootcamp',
