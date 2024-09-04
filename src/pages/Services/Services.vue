@@ -58,6 +58,7 @@ const services = computed(() => [
 
 <style scoped>
 .services{
+  height: 90vh;
   width: 100%;
   background-color: var(--background-color);
 }

@@ -82,7 +82,7 @@ const sortedProjects = computed(() => {
 .projects{
   width: 100%;
   background-color: var(--background-color);
-
+  height: 90vh;
 }
 
 .projects-container {
