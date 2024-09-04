@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
@@ -6,6 +7,8 @@ import GithubIcon from '@icons/GithubIcon.vue';
 import LinkedinIcon from '@icons/LinkedinIcon.vue';
 import MailIcon from '@icons/MailIcon.vue';
 import CloudIcon from '@icons/CloudIcon.vue';
+
+const cvLink = ref(new URL('@/assets/files/MiCV.pdf', import.meta.url).href);
 
 </script>
 
@@ -46,26 +49,28 @@ import CloudIcon from '@icons/CloudIcon.vue';
 
         <ul>
           <li>
-            <a href="#">
+            <a href="https://github.com/DaroOps" target="_blank" rel="noopener noreferrer">
               <GithubIcon />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/david-romero-s-s/" target="_blank" rel="noopener noreferrer">
               <LinkedinIcon />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="mailto:romerosd089@gmail.com?subject=Contacto&body=Hola,%20me%20gustaría%20contactarte." target="_blank" rel="noopener noreferrer">
               <MailIcon />
             </a>
           </li>
         </ul>
       </div>
-      <button class="button" type="button">
-        <span class="button__text">{{ t('home.cv') }}</span>
-        <span class="button__icon"> <CloudIcon /></span>        
-      </button>
+      <a href="cvLink" download="DavidRomero_cv.pdf">
+        <button class="button" type="button">
+          <span class="button__text">{{ t('home.cv') }}</span>
+          <span class="button__icon"> <CloudIcon /></span>        
+        </button>
+      </a>
     </div>
 
 
