@@ -125,6 +125,7 @@ const messages = {
       },
       certifications: {
         title: 'My Certifications',
+        see:"See Certification",
         certifications: {
           fullstackbootcamp: {
             title: 'Full Stack Developer',
@@ -330,6 +331,7 @@ const messages = {
       certifications: {
         title: 'Mis Certificaciones',
         certifications: {
+          see:"Ver Certificado",
           fullstackbootcamp: {
             title: 'Desarrollador Full Stack',
             issuer: 'HENRY Bootcamp',

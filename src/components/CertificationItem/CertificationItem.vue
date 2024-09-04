@@ -8,13 +8,16 @@
       <p class="issuer"><strong>Emisor:</strong> {{ certification.issuer }}</p>
       <p class="date"><strong>Fecha:</strong> {{ certification.date }}</p>
       <p v-if="certification.description" class="description">{{ certification.description }}</p>
-      <a v-if="certification.url" :href="certification.url" target="_blank" rel="noopener noreferrer" class="view-certificate">Ver Certificado</a>
+      <a v-if="certification.url" :href="certification.url" target="_blank" rel="noopener noreferrer" class="view-certificate">{{ t('certifications.see') }}</a>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const props = defineProps({
   certification: {
