@@ -40,7 +40,8 @@ import CloudIcon from '@icons/CloudIcon.vue';
 
     <div class="social-container">
       <div class="image-container">
-        <img src='/../../assets/images/profileImage
+        <img src='
+        /../../assets/images/profileImage
         .jpg' alt="profile-image">
       </div>
       <div class="social-icons">
