@@ -246,7 +246,7 @@ const messages = {
         gameDevSubtitle: "Creando experiencias en mundos virtuales con Unity y Godot.",
         fullstackDev: "Desarrollador Fullstack",
         fullstackDevSubtitle: "Construyendo soluciones escalables y aplicaciones robustas",
-        hobby: "Entusiasta de la impresión 3D, viedojuegos y el arte digital",
+        hobby: "Entusiasta de la impresión 3D, videojuegos y el arte digital",
         explore: 'Explora mi portafolio y descubre cómo me fusiono la tecnología y creatividad en mis proyectos profesionales',
         cv: 'Resumen',
       },
